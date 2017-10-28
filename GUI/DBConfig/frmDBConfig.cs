@@ -9,13 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DATA;
 namespace GUI.DBConfig
 {
     public partial class frmDBConfig : Form
     {
         ArrayList ListaPropiedades = new ArrayList();
-        CONFIG CNF = new CONFIG();
+        Database db = new Database();
         string Disco = Application.StartupPath.Substring(0, 3);
         public frmDBConfig()
         {
@@ -158,8 +158,7 @@ namespace GUI.DBConfig
 
         public void LoadDBConfig()
         {
-            string Conn = "";
-            CNF.ReadCurrentConnectionString(ref Conn);
+            string Conn = DATA.Database.ReadConnectionString();
             try
             {
                 txtCadenaBD.Text = Conn;
@@ -173,7 +172,7 @@ namespace GUI.DBConfig
 
         private void SaveDBConfig()
         {
-            CNF.WriteCurrentConnectionString(txtCadenaBD.Text.Trim());
+            DATA.Database.WriteConnectionString(txtCadenaBD.Text.Trim());
         }
 
 

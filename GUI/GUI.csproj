@@ -71,6 +71,12 @@
     <Content Include="DBConfig\images\1458255661_No.png" />
     <Content Include="DBConfig\images\1458255976_plus-24.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DATA\DATA.csproj">
+      <Project>{25c09a23-76a2-410c-b081-dd31e82aaa25}</Project>
+      <Name>DATA</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
