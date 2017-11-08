@@ -42,13 +42,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="CONConexionBaseDeDatos.cs">
+    <Compile Include="DBConfig\CONFIG.cs" />
+    <Compile Include="DBConfig\frmDBConfig.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CONConexionBaseDeDatos.Designer.cs">
-      <DependentUpon>CONConexionBaseDeDatos.cs</DependentUpon>
+    <Compile Include="DBConfig\frmDBConfig.Designer.cs">
+      <DependentUpon>frmDBConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DBConfig\frmDBConfig.resx">
+      <DependentUpon>frmDBConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBConfig\1458277634_vector_66_14.ico" />
+    <Content Include="DBConfig\images\1458255648_checkmark-24.png" />
+    <Content Include="DBConfig\images\1458255661_No.png" />
+    <Content Include="DBConfig\images\1458255976_plus-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DATA\DATA.csproj">
+      <Project>{25c09a23-76a2-410c-b081-dd31e82aaa25}</Project>
+      <Name>DATA</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
