@@ -41,7 +41,8 @@ namespace GUI.Interface_BABYLON
 
         private void tipoDeUnidadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            BABYTipoUnidad.frmBABYTipoUnidadCAT Forma = new BABYTipoUnidad.frmBABYTipoUnidadCAT();
+            Forma.ShowDialog();
         }
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)

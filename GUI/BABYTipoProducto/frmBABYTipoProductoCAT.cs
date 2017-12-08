@@ -36,7 +36,12 @@ namespace GUI.BABYTipoProducto
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-          
+            if(Lista.SelectedItems.Count==1){
+            int id = ((DATA.BABYTipoProducto.DataBABYTipoProducto)Lista.SelectedItems[0].Tag).IDTipoProducto;
+            LOGIC.BABYTipoProducto Tabla = new LOGIC.BABYTipoProducto();
+            Tabla.Remover(id);
+            RefreshList();
+            }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
