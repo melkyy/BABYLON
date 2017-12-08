@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
+
     <Compile Include="BABYProducto\BABYProducto.cs" />
     <Compile Include="BABYProducto\frmBABYProductoCAT.cs">
       <SubType>Form</SubType>
@@ -60,6 +62,7 @@
     <Compile Include="BABYProducto\frmBABYProductoMDF.Designer.cs">
       <DependentUpon>frmBABYProductoMDF.cs</DependentUpon>
     </Compile>
+
     <Compile Include="BABYProveedores\BABYProveedores.cs" />
     <Compile Include="BABYProveedores\frmBABYProveedoresCAT.cs">
       <SubType>Form</SubType>
@@ -79,6 +82,7 @@
     <Compile Include="BABYProveedores\frmBABYProveedoresMDF.Designer.cs">
       <DependentUpon>frmBABYProveedoresMDF.cs</DependentUpon>
     </Compile>
+
     <Compile Include="BABYTipoProducto\BABYTipoProducto.cs" />
     <Compile Include="BABYTipoProducto\frmBABYTipoProductoCAT.cs">
       <SubType>Form</SubType>
@@ -98,6 +102,7 @@
     <Compile Include="BABYTipoProducto\frmBABYTipoProductoMDF.Designer.cs">
       <DependentUpon>frmBABYTipoProductoMDF.cs</DependentUpon>
     </Compile>
+
     <Compile Include="BABYTipoUnidad\BABYTipoUnidad.cs" />
     <Compile Include="BABYTipoUnidad\frmBABYTipoUnidadCAT.cs">
       <SubType>Form</SubType>
@@ -144,6 +149,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+
+    <EmbeddedResource Include="BABYProveedores\frmBABYProveedoresCAT.resx">
+      <DependentUpon>frmBABYProveedoresCAT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BABYProveedores\frmBABYProveedoresINS.resx">
+      <DependentUpon>frmBABYProveedoresINS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BABYProveedores\frmBABYProveedoresMDF.resx">
+      <DependentUpon>frmBABYProveedoresMDF.cs</DependentUpon>
+
     <EmbeddedResource Include="BABYTipoProducto\frmBABYTipoProductoCAT.resx">
       <DependentUpon>frmBABYTipoProductoCAT.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +167,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BABYTipoProducto\frmBABYTipoProductoMDF.resx">
       <DependentUpon>frmBABYTipoProductoMDF.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="BABYTipoUnidad\frmBABYTipoUnidadCAT.resx">
       <DependentUpon>frmBABYTipoUnidadCAT.cs</DependentUpon>
