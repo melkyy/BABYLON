@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.Aceptar = new System.Windows.Forms.Button();
@@ -106,6 +107,14 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtDescripcion;
         public System.Windows.Forms.TextBox txtNombre;
+
+
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Text = "frmBABYProveedoresMDF";
+        }
+
+        #endregion
 
     }
 }

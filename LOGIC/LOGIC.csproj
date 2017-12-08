@@ -41,12 +41,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BABYProveedores.cs" />
+    <Compile Include="BABYTipoProducto.cs" />
     <Compile Include="BABYTipoUnidad.cs" />
     <Compile Include="BABYUsuarios.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BABYLON\BABYLON.csproj">
+      <Project>{68a4cca0-a554-4a85-958e-6ea720aa8629}</Project>
+      <Name>BABYLON</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DATA\DATA.csproj">
       <Project>{25c09a23-76a2-410c-b081-dd31e82aaa25}</Project>
       <Name>DATA</Name>

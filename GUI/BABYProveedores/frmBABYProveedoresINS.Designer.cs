@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.Aceptar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -106,5 +107,13 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.TextBox txtDescripcion;
+
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Text = "frmBABYProveedoresINS";
+        }
+
+        #endregion
+
     }
 }

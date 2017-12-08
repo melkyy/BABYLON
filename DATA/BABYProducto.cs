@@ -16,6 +16,8 @@ namespace DATA
         public struct DataBABYProducto {
             public int IDProducto;
             public string NombreProducto;
+            public string Descripcion;
+            public double Cantidad;
             public int IDTipoProducto;
             public string NombreTipoProducto;
 
@@ -30,11 +32,14 @@ namespace DATA
             par1.SqlDbType = System.Data.SqlDbType.VarChar;
             SqlParameter par2 = new SqlParameter("@IDTipoProducto", Data.IDTipoProducto);
             par2.SqlDbType = System.Data.SqlDbType.Int;
-            
-
+            SqlParameter par3 = new SqlParameter("@Descripcion", Data.Descripcion);
+            par2.SqlDbType = System.Data.SqlDbType.Int;
+            SqlParameter par4 = new SqlParameter("@Cantidad", Data.Cantidad);
+            par2.SqlDbType = System.Data.SqlDbType.Int;
             DB.COM.Parameters.Add(par1);
             DB.COM.Parameters.Add(par2);
-         
+            DB.COM.Parameters.Add(par3);
+            DB.COM.Parameters.Add(par4);
 
 
             try
@@ -63,6 +68,14 @@ namespace DATA
             par1.SqlDbType = System.Data.SqlDbType.VarChar;
             SqlParameter par2 = new SqlParameter("@IDTipoProducto", Data.IDTipoProducto);
             par2.SqlDbType = System.Data.SqlDbType.Int;
+            SqlParameter par3 = new SqlParameter("@Descripcion", Data.Descripcion);
+            par2.SqlDbType = System.Data.SqlDbType.Int;
+            SqlParameter par4 = new SqlParameter("@Cantidad", Data.Cantidad);
+            par2.SqlDbType = System.Data.SqlDbType.Int;
+            DB.COM.Parameters.Add(par1);
+            DB.COM.Parameters.Add(par2);
+            DB.COM.Parameters.Add(par3);
+            DB.COM.Parameters.Add(par4);
 
 
             DB.COM.Parameters.Add(par1);
@@ -127,7 +140,8 @@ namespace DATA
                     Data.NombreTipoProducto = (string)DB.DR["NombreTipoProducto"];
                     Data.IDProducto = (int)DB.DR["IDProducto"];
                     Data.NombreProducto = (string)DB.DR["NombreProducto"];
-
+                    Data.Descripcion = (string)DB.DR["Descripcion"];
+                    Data.Cantidad = (double)DB.DR["Cantidad"];
 
 
                 }
@@ -169,7 +183,8 @@ namespace DATA
                     Data[i].NombreTipoProducto = (string)DB.DR["NombreTipoProducto"];
                     Data[i].IDProducto = (int)DB.DR["IDProducto"];
                     Data[i].NombreProducto = (string)DB.DR["NombreProducto"];
-
+                    Data[i].Descripcion = (string)DB.DR["Descripcion"];
+                    Data[i].Cantidad = (double)DB.DR["Cantidad"];
                     i++;
 
                 }

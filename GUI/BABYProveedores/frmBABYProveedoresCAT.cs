@@ -16,6 +16,7 @@ namespace GUI.BABYProveedores
         {
             InitializeComponent();
         }
+
         BABYProveedores wf = new BABYProveedores();
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -73,5 +74,6 @@ namespace GUI.BABYProveedores
 
             }
         }
+
     }
 }

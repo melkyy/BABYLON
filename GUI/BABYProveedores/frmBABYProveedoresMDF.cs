@@ -7,16 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using BABYLON;
+
 namespace GUI.BABYProveedores
 {
     public partial class frmBABYProveedoresMDF : Form
     {
+
         public int id;
+
+
         public frmBABYProveedoresMDF()
         {
             InitializeComponent();
         }
+
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
@@ -36,5 +42,6 @@ namespace GUI.BABYProveedores
                 this.DialogResult = System.Windows.Forms.DialogResult.Abort;
             }
         }
+
     }
 }

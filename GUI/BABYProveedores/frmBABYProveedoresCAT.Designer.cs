@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lstLista = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -145,5 +146,13 @@
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Text = "frmBABYProveedoresCAT";
+        }
+
+        #endregion
+
     }
 }

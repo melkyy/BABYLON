@@ -12,11 +12,15 @@ namespace GUI.BABYProveedores
 {
     public partial class frmBABYProveedoresINS : Form
     {
+
         public DATA.BABYProveedores.DataBABYProveedores datos = new DATA.BABYProveedores.DataBABYProveedores();
+
+
         public frmBABYProveedoresINS()
         {
             InitializeComponent();
         }
+
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
@@ -24,5 +28,7 @@ namespace GUI.BABYProveedores
             datos.Descripcion = txtDescripcion.Text.Trim();
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
         }
+
+
     }
 }
