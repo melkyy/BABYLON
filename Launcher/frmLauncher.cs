@@ -24,16 +24,6 @@ namespace Launcher
             frm.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Database DB = new Database();
-            
-            BABYTipoProducto Tabla = new BABYTipoProducto();
-            BABYTipoProducto.DataBABYTipoProducto s= new BABYTipoProducto.DataBABYTipoProducto();
-            s.IDTipoProducto = 1;
-            s.NombreTipoProducto = "Melky";
-            s.Descripcion = "asdasd";
-            Tabla.Agregar(s);
-        }
+        
     }
 }
