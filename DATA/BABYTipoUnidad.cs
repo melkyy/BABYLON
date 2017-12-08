@@ -107,16 +107,14 @@ namespace DATA
         {
             string cmdText = "SELECT COUNT(*) AS Cant FROM [BABY].[TipoUnidad] WHERE NombreTipoUnidad LIKE '%" + Filtro + "%'";
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
-
-            int c = Convert.ToInt32(cmd.ExecuteScalar());
-            cmdText = "SELECT * FROM [BABY].[TipoUnidad] WHERE NombreTipoUnidad LIKE '%" + Filtro + "%'";
             try
             {
                 if (cmd.Connection.State == System.Data.ConnectionState.Closed)
                 {
                     cmd.Connection.Open();
                 }
-
+                int c = Convert.ToInt32(cmd.ExecuteScalar());
+                cmdText = "SELECT * FROM [BABY].[TipoUnidad] WHERE NombreTipoUnidad LIKE '%" + Filtro + "%'";
                 SqlDataReader dr = cmd.ExecuteReader();
                 int i = 0;
                 ARR = new BABYTipoUnidad[c];
