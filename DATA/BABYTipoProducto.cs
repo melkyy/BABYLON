@@ -21,7 +21,7 @@ namespace DATA
         public BABY.enmResultados Agregar(DataBABYTipoProducto Data) {
             Database DB = new Database();
             
-            DB.COM.CommandText = "Exec BABY.spBABYTipoProducto @NombreTipoProducto,@Descripcion,1";
+            DB.COM.CommandText = "Exec BABY.spBABYTipoProducto @NombreTipoProducto,@Descripcion,0,1";
             SqlParameter par1 = new SqlParameter("@NombreTipoProducto",Data.NombreTipoProducto);
             par1.SqlDbType =  System.Data.SqlDbType.VarChar;
             SqlParameter par2 = new SqlParameter("@Descripcion",Data.Descripcion);
@@ -86,7 +86,7 @@ namespace DATA
 
             Database DB = new Database();
 
-            DB.COM.CommandText = "Exec BABY.spBABYTipoProducto @IDTipoProducto,3";
+            DB.COM.CommandText = "Exec BABY.spBABYTipoProducto '','',@IDTipoProducto,3";
             
             SqlParameter par1 = new SqlParameter("@IDTipoProducto", IDTipoProducto);
             par1.SqlDbType = System.Data.SqlDbType.Int;
@@ -147,12 +147,19 @@ namespace DATA
             
         }
 
-        public BABY.enmResultados Listar(ref DataBABYTipoProducto Data) {
+        public BABY.enmResultados Listar(ref DataBABYTipoProducto[] Data,String Filtro) {
             Database DB = new Database();
 
-            DB.COM.CommandText = "Select * from BABY.BABYTipoProducto where NombreTipoProducto like '%"+Data.NombreTipoProducto+"%'";
+            DB.COM.CommandText = "Select Count(*) from BABY.BABYTipoProducto where NombreTipoProducto like '%" + Filtro + "%'";
+            if (DB.COM.Connection.State == System.Data.ConnectionState.Closed)
+            {
+                DB.COM.Connection.Open();
+            }
+            int Cuanto = (int)DB.COM.ExecuteScalar();
+
+            DB.COM.CommandText = "Select * from BABY.BABYTipoProducto where NombreTipoProducto like '%"+Filtro+"%'";
             
-            DB.COM.CommandText = "Select * from BABY.BABYTipoProducto where IDTipoProducto = " + Data.IDTipoProducto;
+            
 
             try
             {
@@ -162,13 +169,15 @@ namespace DATA
                 }
 
                 DB.DR = DB.COM.ExecuteReader();
+                int i = 0;
+                Data = new DataBABYTipoProducto[];
                 while(DB.DR.Read())
                 {
-                    Data.IDTipoProducto = (int)DB.DR["IDTipoProducto"];
-                    Data.NombreTipoProducto = (string)DB.DR["NombreTipoProducto"];
-                    Data.Descripcion = (string)DB.DR["Descripcion"];
+                    Data[i].IDTipoProducto = (int)DB.DR["IDTipoProducto"];
+                    Data[i].NombreTipoProducto = (string)DB.DR["NombreTipoProducto"];
+                    Data[i].Descripcion = (string)DB.DR["Descripcion"];
 
-
+                    i++;
 
                 }
                 DB.DR.Close();

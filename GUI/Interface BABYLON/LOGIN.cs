@@ -71,5 +71,10 @@ namespace GUI.Interface_BABYLON
         {
             Application.Exit();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -10,13 +10,13 @@ namespace DATA
     public class BABYProveedores
     {
         Database DB = new Database();
-        public struct BABYProveedores
+        public struct DataBABYProveedores
         {
             public int idProveedor;
             public string NombreProveedor;
             public int idProducto;
         }
-        public BABY.enmResultados Agregar(BABYProveedores str)
+        public BABY.enmResultados Agregar(DataBABYProveedores str)
         {
             string cmdText = "INSERT INTO [BABY].[Proveedores] (NombreProveedor, idProducto) values (@NombreProveedor, @idProducto)";
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
@@ -41,7 +41,7 @@ namespace DATA
                 return BABY.enmResultados.ErrorDeConexion;
             }
         }
-        public BABY.enmResultados Modificar(BABYProveedores str)
+        public BABY.enmResultados Modificar(DataBABYProveedores str)
         {
             string cmdText = "UPDATE [BABY].[Proveedores] SET NombreProveedor = @NombreProveedor, idProducto = @idProducto WHERE idProducto = " + str.idProducto;
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
@@ -86,7 +86,7 @@ namespace DATA
                 return BABY.enmResultados.ErrorDeConexion;
             }
         }
-        public BABY.enmResultados Mostrar(ref BABYProveedores str, int idProducto)
+        public BABY.enmResultados Mostrar(ref DataBABYProveedores str, int idProducto)
         {
             string cmdText = "SELECT * FROM [BABY].[Proveedores] WHERE idProducto = " + idProducto;
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
@@ -110,7 +110,7 @@ namespace DATA
                 return BABY.enmResultados.ErrorDeConexion;
             }
         }
-        public BABY.enmResultados Listar(ref BABYProveedores[] ARR, string Filtro)
+        public BABY.enmResultados Listar(ref DataBABYProveedores[] ARR, string Filtro)
         {
             string cmdText = "SELECT COUNT(*) AS Cant FROM [BABY].[Proveedores] WHERE NombreProveedor LIKE '%" + Filtro + "%'";
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
@@ -124,7 +124,7 @@ namespace DATA
                 cmdText = "SELECT * FROM [BABY].[Proveedores] WHERE NombreProveedor LIKE '%" + Filtro + "%'";
                 SqlDataReader dr = cmd.ExecuteReader();
                 int i = 0;
-                ARR = new BABYProveedores[c];
+                ARR = new DataBABYProveedores[c];
                 while (dr.Read())
                 {
                     ARR[i].idProducto = Convert.ToInt32(dr["idProducto"]);
