@@ -11,13 +11,13 @@ namespace DATA
     {
 
         Database DB = new Database();
-        public struct BABYTipoUnidad
+        public struct DataBABYTipoUnidad
         {
             public int idTipoUnidad;
             public string NombreTipoUnidad;
         }
 
-        public BABY.enmResultados Agregar(BABYTipoUnidad str)
+        public BABY.enmResultados Agregar(DataBABYTipoUnidad str)
         {
             string cmdText = "INSERT INTO [BABY].[TipoUnidad] (NombreTipoUnidad) values (@NombreTipoUnidad)";
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
@@ -39,7 +39,7 @@ namespace DATA
                 return BABY.enmResultados.ErrorDeConexion;
             }
         }
-        public BABY.enmResultados Modificar(BABYTipoUnidad str)
+        public BABY.enmResultados Modificar(DataBABYTipoUnidad str)
         {
             string cmdText = "UPDATE [BABY].[TipoUnidad] SET NombreTipoUnidad = @NombreTipoUnidad WHERE idTipoUnidad = " + str.idTipoUnidad;
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
@@ -80,7 +80,7 @@ namespace DATA
                 return BABY.enmResultados.ErrorDeConexion;
             }
         }
-        public BABY.enmResultados Mostrar(ref BABYTipoUnidad str, int idTipoUnidad)
+        public BABY.enmResultados Mostrar(ref DataBABYTipoUnidad str, int idTipoUnidad)
         {
             string cmdText = "SELECT * FROM [BABY].[TipoUnidad] WHERE idTipoUnidad = " + idTipoUnidad;
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
@@ -104,7 +104,7 @@ namespace DATA
                 return BABY.enmResultados.ErrorDeConexion;
             }
         }
-        public BABY.enmResultados Listar(ref BABYTipoUnidad[] ARR, string Filtro)
+        public BABY.enmResultados Listar(ref DataBABYTipoUnidad[] ARR, string Filtro)
         {
             string cmdText = "SELECT COUNT(*) AS Cant FROM [BABY].[TipoUnidad] WHERE NombreTipoUnidad LIKE '%" + Filtro + "%'";
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
@@ -118,7 +118,7 @@ namespace DATA
                 cmdText = "SELECT * FROM [BABY].[TipoUnidad] WHERE NombreTipoUnidad LIKE '%" + Filtro + "%'";
                 SqlDataReader dr = cmd.ExecuteReader();
                 int i = 0;
-                ARR = new BABYTipoUnidad[c];
+                ARR = new DataBABYTipoUnidad[c];
                 while (dr.Read())
                 {
                     ARR[i].idTipoUnidad = Convert.ToInt32(dr["idTipoUnidad"]);

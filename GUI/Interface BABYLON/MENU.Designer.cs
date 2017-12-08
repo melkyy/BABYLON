@@ -31,11 +31,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.administrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.capturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeUnidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.capturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.capturaDeVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -51,13 +51,13 @@
             // 
             // MenuStrip
             // 
-            this.MenuStrip.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.MenuStrip.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.administrarToolStripMenuItem,
             this.capturasToolStripMenuItem});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
-            this.MenuStrip.Size = new System.Drawing.Size(1923, 33);
+            this.MenuStrip.Size = new System.Drawing.Size(1354, 33);
             this.MenuStrip.TabIndex = 1;
             this.MenuStrip.Text = "menuStrip1";
             // 
@@ -72,15 +72,6 @@
             this.administrarToolStripMenuItem.Name = "administrarToolStripMenuItem";
             this.administrarToolStripMenuItem.Size = new System.Drawing.Size(125, 29);
             this.administrarToolStripMenuItem.Text = "Administrar";
-            // 
-            // capturasToolStripMenuItem
-            // 
-            this.capturasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.capturaDeVentaToolStripMenuItem});
-            this.capturasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.capturasToolStripMenuItem.Name = "capturasToolStripMenuItem";
-            this.capturasToolStripMenuItem.Size = new System.Drawing.Size(100, 29);
-            this.capturasToolStripMenuItem.Text = "Capturas";
             // 
             // tipoDeProductosToolStripMenuItem
             // 
@@ -107,6 +98,15 @@
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(238, 30);
             this.productosToolStripMenuItem.Text = "Productos";
             // 
+            // capturasToolStripMenuItem
+            // 
+            this.capturasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.capturaDeVentaToolStripMenuItem});
+            this.capturasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.capturasToolStripMenuItem.Name = "capturasToolStripMenuItem";
+            this.capturasToolStripMenuItem.Size = new System.Drawing.Size(100, 29);
+            this.capturasToolStripMenuItem.Text = "Capturas";
+            // 
             // capturaDeVentaToolStripMenuItem
             // 
             this.capturaDeVentaToolStripMenuItem.Name = "capturaDeVentaToolStripMenuItem";
@@ -117,7 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1923, 1013);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.MenuStrip);
             this.MainMenuStrip = this.MenuStrip;
