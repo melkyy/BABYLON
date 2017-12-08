@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using GUI;
 namespace Launcher
 {
     static class Program
@@ -16,7 +16,8 @@ namespace Launcher
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLauncher());
+             Application.Run(new GUI.Interface_BABYLON.MENU());
+           
         }
     }
 }

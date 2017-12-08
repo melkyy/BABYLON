@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DATA
 {
-    public class Class1
+    public class BABYTipoUnidad
     {
     }
 }

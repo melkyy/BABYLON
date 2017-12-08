@@ -16,12 +16,15 @@ namespace DATA
             try
             {
                 Connection = new SqlConnection(ReadConnectionString());
+               
+                
             }
             catch
             {
 
             }
         }
+
         public SqlConnection getConnection()
         {
             if (Connection == null)
@@ -57,5 +60,11 @@ namespace DATA
             }
             catch { }
         }
+
+        public SqlCommand COM = new SqlCommand();
+
+        public SqlDataReader DR;
+
+
     }
 }

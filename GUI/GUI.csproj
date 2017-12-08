@@ -41,13 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DBConfig\CONFIG.cs" />
     <Compile Include="DBConfig\frmDBConfig.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DBConfig\frmDBConfig.Designer.cs">
       <DependentUpon>frmDBConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface BABYLON\LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface BABYLON\LOGIN.Designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface BABYLON\MENU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface BABYLON\MENU.Designer.cs">
+      <DependentUpon>MENU.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -60,6 +71,12 @@
     <EmbeddedResource Include="DBConfig\frmDBConfig.resx">
       <DependentUpon>frmDBConfig.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interface BABYLON\LOGIN.resx">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface BABYLON\MENU.resx">
+      <DependentUpon>MENU.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -70,11 +87,17 @@
     <Content Include="DBConfig\images\1458255648_checkmark-24.png" />
     <Content Include="DBConfig\images\1458255661_No.png" />
     <Content Include="DBConfig\images\1458255976_plus-24.png" />
+    <Content Include="Interface BABYLON\images\babylon.jpg" />
+    <Content Include="Interface BABYLON\images\login.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DATA\DATA.csproj">
       <Project>{25c09a23-76a2-410c-b081-dd31e82aaa25}</Project>
       <Name>DATA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LOGIC\LOGIC.csproj">
+      <Project>{51b805c2-a651-4ff7-9488-251ae1625786}</Project>
+      <Name>LOGIC</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
