@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using GUI;
 namespace GUI.Interface_BABYLON
 {
     public partial class MENU : Form
@@ -21,7 +21,7 @@ namespace GUI.Interface_BABYLON
         {
             LOGIN Forma = new LOGIN();
             DialogResult Resultado;
-            Resultado = Forma.ShowDialog(this);
+            //Resultado = Forma.ShowDialog(this);
 
 
             this.Focus();
@@ -36,6 +36,20 @@ namespace GUI.Interface_BABYLON
         private void tipoDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tipoDeUnidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form frm in Application.OpenForms)
+            {
+                if(frm is BABYTipoUnidad.frmBABYTipoUnidadCAT)
+                {
+                    frm.Focus();
+                    return;
+                }
+            }
+            BABYTipoUnidad.frmBABYTipoUnidadCAT f = new BABYTipoUnidad.frmBABYTipoUnidadCAT();
+            f.Show();
         }
     }
 }

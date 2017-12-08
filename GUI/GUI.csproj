@@ -41,6 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BABYTipoUnidad\BABYTipoUnidad.cs" />
+    <Compile Include="BABYTipoUnidad\frmBABYTipoUnidadCAT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BABYTipoUnidad\frmBABYTipoUnidadCAT.Designer.cs">
+      <DependentUpon>frmBABYTipoUnidadCAT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BABYTipoUnidad\frmBABYTipoUnidadINS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BABYTipoUnidad\frmBABYTipoUnidadINS.Designer.cs">
+      <DependentUpon>frmBABYTipoUnidadINS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BABYTipoUnidad\frmBABYTipoUnidadMDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BABYTipoUnidad\frmBABYTipoUnidadMDF.Designer.cs">
+      <DependentUpon>frmBABYTipoUnidadMDF.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBConfig\CONFIG.cs" />
     <Compile Include="DBConfig\frmDBConfig.cs">
       <SubType>Form</SubType>
@@ -68,6 +87,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BABYTipoUnidad\frmBABYTipoUnidadCAT.resx">
+      <DependentUpon>frmBABYTipoUnidadCAT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BABYTipoUnidad\frmBABYTipoUnidadINS.resx">
+      <DependentUpon>frmBABYTipoUnidadINS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BABYTipoUnidad\frmBABYTipoUnidadMDF.resx">
+      <DependentUpon>frmBABYTipoUnidadMDF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DBConfig\frmDBConfig.resx">
       <DependentUpon>frmDBConfig.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +119,10 @@
     <Content Include="Interface BABYLON\images\login.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BABYLON\BABYLON.csproj">
+      <Project>{68a4cca0-a554-4a85-958e-6ea720aa8629}</Project>
+      <Name>BABYLON</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DATA\DATA.csproj">
       <Project>{25c09a23-76a2-410c-b081-dd31e82aaa25}</Project>
       <Name>DATA</Name>
@@ -99,6 +131,9 @@
       <Project>{51b805c2-a651-4ff7-9488-251ae1625786}</Project>
       <Name>LOGIC</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BABYProveedores\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

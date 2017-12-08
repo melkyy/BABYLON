@@ -57,7 +57,7 @@
             this.capturasToolStripMenuItem});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
-            this.MenuStrip.Size = new System.Drawing.Size(1354, 33);
+            this.MenuStrip.Size = new System.Drawing.Size(1020, 33);
             this.MenuStrip.TabIndex = 1;
             this.MenuStrip.Text = "menuStrip1";
             // 
@@ -85,6 +85,7 @@
             this.tipoDeUnidadToolStripMenuItem.Name = "tipoDeUnidadToolStripMenuItem";
             this.tipoDeUnidadToolStripMenuItem.Size = new System.Drawing.Size(238, 30);
             this.tipoDeUnidadToolStripMenuItem.Text = "Tipo de Unidad";
+            this.tipoDeUnidadToolStripMenuItem.Click += new System.EventHandler(this.tipoDeUnidadToolStripMenuItem_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
@@ -117,7 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.ClientSize = new System.Drawing.Size(1020, 733);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.MenuStrip);
             this.MainMenuStrip = this.MenuStrip;
