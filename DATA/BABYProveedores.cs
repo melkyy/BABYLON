@@ -1,29 +1,57 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BABYLON;
+using System.Data.SqlClient;
 namespace DATA
 {
-    public class BABYTipoUnidad
+    public class BABYProveedores
     {
-
         Database DB = new Database();
-        public struct DataBABYTipoUnidad
+        public struct BABYProveedores
         {
-            public int idTipoUnidad;
-            public string NombreTipoUnidad;
+            public int idProveedor;
+            public string NombreProveedor;
+            public int idProducto;
         }
+        public BABY.enmResultados Agregar(BABYProveedores str)
+        {
+            string cmdText = "INSERT INTO [BABY].[Proveedores] (NombreProveedor, idProducto) values (@NombreProveedor, @idProducto)";
+            SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
+            SqlParameter par1 = new SqlParameter("@NombreProveedor", str.NombreProveedor);
+            par1.SqlDbType = System.Data.SqlDbType.VarChar;
+            SqlParameter par2 = new SqlParameter("@idProducto", str.idProducto);
+            par1.SqlDbType = System.Data.SqlDbType.Int;
+            cmd.Parameters.Add(par1);
+            cmd.Parameters.Add(par2);
+            try
+            {
+                if (cmd.Connection.State == System.Data.ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return BABY.enmResultados.OperacionCorrecta;
+            }
+            catch
+            {
+                return BABY.enmResultados.ErrorDeConexion;
+            }
+        }
+        public BABY.enmResultados Modificar(BABYProveedores str)
+        {
+            string cmdText = "UPDATE [BABY].[Proveedores] SET NombreProveedor = @NombreProveedor, idProducto = @idProducto WHERE idProducto = " + str.idProducto;
+            SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
+            SqlParameter par1 = new SqlParameter("@NombreProveedor", str.NombreProveedor);
+            par1.SqlDbType = System.Data.SqlDbType.VarChar;
+            SqlParameter par2 = new SqlParameter("@idProducto", str.idProducto);
+            par1.SqlDbType = System.Data.SqlDbType.Int;
+            cmd.Parameters.Add(par1);
+            cmd.Parameters.Add(par2);
 
-        public BABY.enmResultados Agregar(DataBABYTipoUnidad str)
-        {
-            string cmdText = "INSERT INTO [BABY].[TipoUnidad] (NombreTipoUnidad) values (@NombreTipoUnidad)";
-            SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
-            SqlParameter par1 = new SqlParameter("@NombreTipoUnidad", str.NombreTipoUnidad);
-            par1.SqlDbType = System.Data.SqlDbType.VarChar;
-            cmd.Parameters.Add(par1);
             try
             {
                 if (cmd.Connection.State == System.Data.ConnectionState.Closed)
@@ -34,36 +62,14 @@ namespace DATA
                 cmd.Connection.Close();
                 return BABY.enmResultados.OperacionCorrecta;
             }
-            catch 
+            catch
             {
                 return BABY.enmResultados.ErrorDeConexion;
             }
         }
-        public BABY.enmResultados Modificar(DataBABYTipoUnidad str)
+        public BABY.enmResultados Remover(int idProducto)
         {
-            string cmdText = "UPDATE [BABY].[TipoUnidad] SET NombreTipoUnidad = @NombreTipoUnidad WHERE idTipoUnidad = " + str.idTipoUnidad;
-            SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
-            SqlParameter par1 = new SqlParameter("@NombreTipoUnidad", str.NombreTipoUnidad);
-            par1.SqlDbType = System.Data.SqlDbType.VarChar;
-            cmd.Parameters.Add(par1);
-            try
-            {
-                if (cmd.Connection.State == System.Data.ConnectionState.Closed)
-                {
-                    cmd.Connection.Open();
-                }
-                cmd.ExecuteNonQuery();
-                cmd.Connection.Close();
-                return BABY.enmResultados.OperacionCorrecta;
-            }
-            catch 
-            {
-                return BABY.enmResultados.ErrorDeConexion;
-            }
-        }
-        public BABY.enmResultados Remover(int idTipoUnidad)
-        {
-            string cmdText = "DELETE FROM [BABY].[TipoUnidad] WHERE idTipoUnidad = " + idTipoUnidad;
+            string cmdText = "DELETE FROM [BABY].[Proveedores] WHERE idProducto = " + idProducto;
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
             try
             {
@@ -75,14 +81,14 @@ namespace DATA
                 cmd.Connection.Close();
                 return BABY.enmResultados.OperacionCorrecta;
             }
-            catch 
+            catch
             {
                 return BABY.enmResultados.ErrorDeConexion;
             }
         }
-        public BABY.enmResultados Mostrar(ref DataBABYTipoUnidad str, int idTipoUnidad)
+        public BABY.enmResultados Mostrar(ref BABYProveedores str, int idProducto)
         {
-            string cmdText = "SELECT * FROM [BABY].[TipoUnidad] WHERE idTipoUnidad = " + idTipoUnidad;
+            string cmdText = "SELECT * FROM [BABY].[Proveedores] WHERE idProducto = " + idProducto;
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
             try
             {
@@ -93,8 +99,8 @@ namespace DATA
 
                 SqlDataReader dr = cmd.ExecuteReader();
                 dr.Read();
-                str.idTipoUnidad = Convert.ToInt32(dr["idTipoUnidad"]);
-                str.NombreTipoUnidad = Convert.ToString(dr["NombreTipoUnidad"]);
+                str.NombreProveedor = Convert.ToString(dr["NombreProveedor"]);
+                str.idProducto = Convert.ToInt32(dr["idProducto"]);
                 dr.Close();
                 cmd.Connection.Close();
                 return BABY.enmResultados.OperacionCorrecta;
@@ -104,9 +110,9 @@ namespace DATA
                 return BABY.enmResultados.ErrorDeConexion;
             }
         }
-        public BABY.enmResultados Listar(ref DataBABYTipoUnidad[] ARR, string Filtro)
+        public BABY.enmResultados Listar(ref BABYProveedores[] ARR, string Filtro)
         {
-            string cmdText = "SELECT COUNT(*) AS Cant FROM [BABY].[TipoUnidad] WHERE NombreTipoUnidad LIKE '%" + Filtro + "%'";
+            string cmdText = "SELECT COUNT(*) AS Cant FROM [BABY].[Proveedores] WHERE NombreProveedor LIKE '%" + Filtro + "%'";
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
             try
             {
@@ -115,25 +121,24 @@ namespace DATA
                     cmd.Connection.Open();
                 }
                 int c = Convert.ToInt32(cmd.ExecuteScalar());
-                cmdText = "SELECT * FROM [BABY].[TipoUnidad] WHERE NombreTipoUnidad LIKE '%" + Filtro + "%'";
+                cmdText = "SELECT * FROM [BABY].[Proveedores] WHERE NombreProveedor LIKE '%" + Filtro + "%'";
                 SqlDataReader dr = cmd.ExecuteReader();
                 int i = 0;
-                ARR = new DataBABYTipoUnidad[c];
+                ARR = new BABYProveedores[c];
                 while (dr.Read())
                 {
-                    ARR[i].idTipoUnidad = Convert.ToInt32(dr["idTipoUnidad"]);
-                    ARR[i].NombreTipoUnidad = Convert.ToString(dr["NombreTipoUnidad"]);
+                    ARR[i].idProducto = Convert.ToInt32(dr["idProducto"]);
+                    ARR[i].NombreProveedor = Convert.ToString(dr["NombreProveedor"]);
                     i++;
                 }
                 dr.Close();
                 cmd.Connection.Close();
                 return BABY.enmResultados.OperacionCorrecta;
             }
-            catch 
+            catch
             {
                 return BABY.enmResultados.ErrorDeConexion;
             }
         }
-
     }
 }
