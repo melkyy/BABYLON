@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BABYLON;
 
 namespace GUI.BABYTipoUnidad
 {
@@ -15,6 +16,12 @@ namespace GUI.BABYTipoUnidad
         public frmBABYTipoUnidadINS()
         {
             InitializeComponent();
+        }
+        public DATA.BABYTipoUnidad.DataBABYTipoUnidad datos = new DATA.BABYTipoUnidad.DataBABYTipoUnidad();
+        private void Aceptar_Click(object sender, EventArgs e)
+        {
+            datos.NombreTipoUnidad = txtNombre.Text.Trim();
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
         }
     }
 }

@@ -19,10 +19,11 @@ namespace DATA
 
         public BABY.enmResultados Agregar(DataBABYTipoUnidad str)
         {
-            string cmdText = "INSERT INTO [BABY].[TipoUnidad] (NombreTipoUnidad) values (@NombreTipoUnidad)";
+            string cmdText = "BABY.spBABYTipoUnidadINS";
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
             SqlParameter par1 = new SqlParameter("@NombreTipoUnidad", str.NombreTipoUnidad);
             par1.SqlDbType = System.Data.SqlDbType.VarChar;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.Add(par1);
             try
             {
@@ -116,6 +117,7 @@ namespace DATA
                 }
                 int c = Convert.ToInt32(cmd.ExecuteScalar());
                 cmdText = "SELECT * FROM [BABY].[TipoUnidad] WHERE NombreTipoUnidad LIKE '%" + Filtro + "%'";
+                cmd.CommandText = cmdText;
                 SqlDataReader dr = cmd.ExecuteReader();
                 int i = 0;
                 ARR = new DataBABYTipoUnidad[c];
