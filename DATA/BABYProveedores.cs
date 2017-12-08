@@ -14,16 +14,16 @@ namespace DATA
         {
             public int idProveedor;
             public string NombreProveedor;
-            public int idProducto;
+            public string Descripcion;
         }
         public BABY.enmResultados Agregar(DataBABYProveedores str)
         {
-            string cmdText = "INSERT INTO [BABY].[Proveedores] (NombreProveedor, idProducto) values (@NombreProveedor, @idProducto)";
+            string cmdText = "INSERT INTO [BABY].[Proveedores] (NombreProveedor, Descripcion) values (@NombreProveedor, @Descripcion)";
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
             SqlParameter par1 = new SqlParameter("@NombreProveedor", str.NombreProveedor);
             par1.SqlDbType = System.Data.SqlDbType.VarChar;
-            SqlParameter par2 = new SqlParameter("@idProducto", str.idProducto);
-            par1.SqlDbType = System.Data.SqlDbType.Int;
+            SqlParameter par2 = new SqlParameter("@Descripcion", str.Descripcion);
+            par1.SqlDbType = System.Data.SqlDbType.Text;
             cmd.Parameters.Add(par1);
             cmd.Parameters.Add(par2);
             try
@@ -43,12 +43,12 @@ namespace DATA
         }
         public BABY.enmResultados Modificar(DataBABYProveedores str)
         {
-            string cmdText = "UPDATE [BABY].[Proveedores] SET NombreProveedor = @NombreProveedor, idProducto = @idProducto WHERE idProducto = " + str.idProducto;
+            string cmdText = "UPDATE [BABY].[Proveedores] SET NombreProveedor = @NombreProveedor, Descripcion = @Descripcion WHERE idProveedor = " + str.idProveedor;
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
             SqlParameter par1 = new SqlParameter("@NombreProveedor", str.NombreProveedor);
             par1.SqlDbType = System.Data.SqlDbType.VarChar;
-            SqlParameter par2 = new SqlParameter("@idProducto", str.idProducto);
-            par1.SqlDbType = System.Data.SqlDbType.Int;
+            SqlParameter par2 = new SqlParameter("@Descripcion", str.Descripcion);
+            par1.SqlDbType = System.Data.SqlDbType.Text;
             cmd.Parameters.Add(par1);
             cmd.Parameters.Add(par2);
 
@@ -67,9 +67,9 @@ namespace DATA
                 return BABY.enmResultados.ErrorDeConexion;
             }
         }
-        public BABY.enmResultados Remover(int idProducto)
+        public BABY.enmResultados Remover(int idProveedor)
         {
-            string cmdText = "DELETE FROM [BABY].[Proveedores] WHERE idProducto = " + idProducto;
+            string cmdText = "DELETE FROM [BABY].[Proveedores] WHERE idProveedor = " + idProveedor;
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
             try
             {
@@ -86,9 +86,9 @@ namespace DATA
                 return BABY.enmResultados.ErrorDeConexion;
             }
         }
-        public BABY.enmResultados Mostrar(ref DataBABYProveedores str, int idProducto)
+        public BABY.enmResultados Mostrar(ref DataBABYProveedores str, int idProveedor)
         {
-            string cmdText = "SELECT * FROM [BABY].[Proveedores] WHERE idProducto = " + idProducto;
+            string cmdText = "SELECT * FROM [BABY].[Proveedores] WHERE idProveedor = " + idProveedor;
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
             try
             {
@@ -100,7 +100,7 @@ namespace DATA
                 SqlDataReader dr = cmd.ExecuteReader();
                 dr.Read();
                 str.NombreProveedor = Convert.ToString(dr["NombreProveedor"]);
-                str.idProducto = Convert.ToInt32(dr["idProducto"]);
+                str.Descripcion = Convert.ToString(dr["Descripcion"]);
                 dr.Close();
                 cmd.Connection.Close();
                 return BABY.enmResultados.OperacionCorrecta;
@@ -122,12 +122,13 @@ namespace DATA
                 }
                 int c = Convert.ToInt32(cmd.ExecuteScalar());
                 cmdText = "SELECT * FROM [BABY].[Proveedores] WHERE NombreProveedor LIKE '%" + Filtro + "%'";
+                cmd.CommandText = cmdText;
                 SqlDataReader dr = cmd.ExecuteReader();
                 int i = 0;
                 ARR = new DataBABYProveedores[c];
                 while (dr.Read())
                 {
-                    ARR[i].idProducto = Convert.ToInt32(dr["idProducto"]);
+                    ARR[i].Descripcion = Convert.ToString(dr["Descripcion"]);
                     ARR[i].NombreProveedor = Convert.ToString(dr["NombreProveedor"]);
                     i++;
                 }

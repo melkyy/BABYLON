@@ -10,9 +10,21 @@ namespace GUI.BABYTipoUnidad
     public class BABYTipoUnidad
     {
         DATA.BABYTipoUnidad tabla = new DATA.BABYTipoUnidad();
-        public DialogResult Agregar()
+        public void Agregar()
         {
-            return new frmBABYTipoUnidadINS().ShowDialog();
+            frmBABYTipoUnidadINS frm = new frmBABYTipoUnidadINS();
+            frm.ShowDialog();
+            if(frm.DialogResult == DialogResult.OK)
+            {
+                if(tabla.Agregar(frm.datos) == BABYLON.BABY.enmResultados.OperacionCorrecta)
+                {
+                    MessageBox.Show("Agregado correctamente", "Agregarinar tipo de unidad", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ha ocurrido un error", "Agregar tipo de unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
         public DialogResult Modificar(int idTipoUnidad)
         {
