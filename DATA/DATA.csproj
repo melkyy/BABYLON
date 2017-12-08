@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BABYProducto.cs" />
-    <Compile Include="BABYProvedores.cs" />
+    <Compile Include="BABYProveedores.cs" />
     <Compile Include="BABYTipoProducto.cs" />
     <Compile Include="BABYTipoUnidad.cs" />
     <Compile Include="BABYUsuarios.cs" />
