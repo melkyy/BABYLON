@@ -25,20 +25,22 @@ namespace DATA
                 DB.COM.Connection.Open();
                 DB.DR = DB.COM.ExecuteReader();
                 if(DB.DR.Read()){
-
-                    return true;
                     DB.DR.Close();
+                    return true;
+                    
                 }
                 else
                 {
-                    return false;
                     DB.DR.Close();
+                    return false;
+                   
                 }
 
             }
             catch {
-                return false;
                 DB.DR.Close();
+                return false;
+               
             }
         
         }
