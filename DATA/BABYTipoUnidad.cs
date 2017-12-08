@@ -19,10 +19,11 @@ namespace DATA
 
         public BABY.enmResultados Agregar(DataBABYTipoUnidad str)
         {
-            string cmdText = "INSERT INTO [BABY].[TipoUnidad] (NombreTipoUnidad) values (@NombreTipoUnidad)";
+            string cmdText = "BABY.spBABYTipoUnidadINS";
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
             SqlParameter par1 = new SqlParameter("@NombreTipoUnidad", str.NombreTipoUnidad);
             par1.SqlDbType = System.Data.SqlDbType.VarChar;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.Add(par1);
             try
             {

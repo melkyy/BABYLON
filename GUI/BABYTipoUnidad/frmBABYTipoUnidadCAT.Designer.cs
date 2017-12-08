@@ -54,6 +54,7 @@
             this.txtTipoUnidad.Name = "txtTipoUnidad";
             this.txtTipoUnidad.Size = new System.Drawing.Size(407, 23);
             this.txtTipoUnidad.TabIndex = 1;
+            this.txtTipoUnidad.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTipoUnidad_KeyUp);
             // 
             // lstLista
             // 
