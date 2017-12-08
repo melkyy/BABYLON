@@ -16,5 +16,10 @@ namespace GUI.BABYTipoUnidad
         {
             InitializeComponent();
         }
+
+        private void Aceptar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

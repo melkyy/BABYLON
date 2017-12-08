@@ -116,6 +116,7 @@ namespace DATA
                 }
                 int c = Convert.ToInt32(cmd.ExecuteScalar());
                 cmdText = "SELECT * FROM [BABY].[TipoUnidad] WHERE NombreTipoUnidad LIKE '%" + Filtro + "%'";
+                cmd.CommandText = cmdText;
                 SqlDataReader dr = cmd.ExecuteReader();
                 int i = 0;
                 ARR = new DataBABYTipoUnidad[c];

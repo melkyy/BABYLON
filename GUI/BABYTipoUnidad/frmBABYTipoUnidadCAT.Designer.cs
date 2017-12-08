@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtTipoUnidad = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lstLista = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -55,21 +55,21 @@
             this.txtTipoUnidad.Size = new System.Drawing.Size(407, 23);
             this.txtTipoUnidad.TabIndex = 1;
             // 
-            // listView1
+            // lstLista
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lstLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstLista.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
-            this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(85, 35);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(428, 245);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lstLista.FullRowSelect = true;
+            this.lstLista.Location = new System.Drawing.Point(85, 35);
+            this.lstLista.MultiSelect = false;
+            this.lstLista.Name = "lstLista";
+            this.lstLista.Size = new System.Drawing.Size(428, 245);
+            this.lstLista.TabIndex = 2;
+            this.lstLista.UseCompatibleStateImageBehavior = false;
+            this.lstLista.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -114,13 +114,14 @@
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lstLista);
             this.Controls.Add(this.txtTipoUnidad);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmBABYTipoUnidadCAT";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrar Tipos de Unidades";
+            this.Load += new System.EventHandler(this.frmBABYTipoUnidadCAT_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,7 +131,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTipoUnidad;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lstLista;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEditar;

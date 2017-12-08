@@ -31,5 +31,25 @@ namespace GUI.BABYTipoUnidad
         {
             wf.Remover(0);
         }
+
+        public void Refreshlist(string filtro)
+        {
+            lstLista.Items.Clear();
+            DATA.BABYTipoUnidad.DataBABYTipoUnidad[] arr = null;
+            DATA.BABYTipoUnidad tabla = new DATA.BABYTipoUnidad();
+            tabla.Listar(ref arr, filtro);
+            foreach(DATA.BABYTipoUnidad.DataBABYTipoUnidad s in arr)
+            {
+                ListViewItem i = new ListViewItem();
+                i.Text = s.NombreTipoUnidad;
+                i.Tag = s;
+                lstLista.Items.Add(i);
+            }
+        }
+
+        private void frmBABYTipoUnidadCAT_Load(object sender, EventArgs e)
+        {
+            Refreshlist("");
+        }
     }
 }
