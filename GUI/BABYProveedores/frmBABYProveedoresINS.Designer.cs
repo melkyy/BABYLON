@@ -82,6 +82,7 @@
             // frmBABYProveedoresINS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+<<<<<<< HEAD
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 207);
             this.Controls.Add(this.label2);
@@ -109,11 +110,39 @@
         public System.Windows.Forms.TextBox txtDescripcion;
 
             this.components = new System.ComponentModel.Container();
+=======
+>>>>>>> Despues de la entrega estos son los archivos de la entrega
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmBABYProveedoresINS";
+            this.ClientSize = new System.Drawing.Size(370, 207);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.Aceptar);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "frmBABYProveedoresINS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Agregar Proveedor";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.Button Aceptar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtDescripcion;
+
+            
+        }
+
+  
+>>>>>>> Despues de la entrega estos son los archivos de la entrega
     }
-}

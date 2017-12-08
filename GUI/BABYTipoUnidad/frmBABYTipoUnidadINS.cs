@@ -22,6 +22,7 @@ namespace GUI.BABYTipoUnidad
         {
             datos.NombreTipoUnidad = txtNombre.Text.Trim();
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            Close();
         }
     }
 }

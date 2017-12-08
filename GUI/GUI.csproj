@@ -149,7 +149,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
 
+=======
+>>>>>>> Despues de la entrega estos son los archivos de la entrega
     <EmbeddedResource Include="BABYProveedores\frmBABYProveedoresCAT.resx">
       <DependentUpon>frmBABYProveedoresCAT.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,7 +161,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BABYProveedores\frmBABYProveedoresMDF.resx">
       <DependentUpon>frmBABYProveedoresMDF.cs</DependentUpon>
+<<<<<<< HEAD
 
+=======
+    </EmbeddedResource>
+>>>>>>> Despues de la entrega estos son los archivos de la entrega
     <EmbeddedResource Include="BABYTipoProducto\frmBABYTipoProductoCAT.resx">
       <DependentUpon>frmBABYTipoProductoCAT.cs</DependentUpon>
     </EmbeddedResource>

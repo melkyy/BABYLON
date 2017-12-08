@@ -60,6 +60,7 @@ namespace GUI.Interface_BABYLON
 
         }
 
+<<<<<<< HEAD
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form frm in Application.OpenForms)
@@ -82,6 +83,12 @@ namespace GUI.Interface_BABYLON
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
+=======
+        private void proveedoresToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            BABYProveedores.frmBABYProveedoresCAT Forma = new BABYProveedores.frmBABYProveedoresCAT();
+            Forma.ShowDialog();
+>>>>>>> Despues de la entrega estos son los archivos de la entrega
         }
     }
 }

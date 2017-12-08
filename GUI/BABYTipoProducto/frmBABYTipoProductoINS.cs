@@ -31,7 +31,7 @@ namespace GUI.BABYTipoProducto
         {
             LOGIC.BABYTipoProducto Tabla = new LOGIC.BABYTipoProducto();
             Tabla.Agregar(TxtNombreTipoProducto.Text, TxtDescripcion.Text);
-            
+            Close();
             
         }
     }
