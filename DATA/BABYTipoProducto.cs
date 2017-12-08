@@ -170,7 +170,7 @@ namespace DATA
 
                 DB.DR = DB.COM.ExecuteReader();
                 int i = 0;
-                Data = new DataBABYTipoProducto[];
+                Data = new DataBABYTipoProducto[Cuanto];
                 while(DB.DR.Read())
                 {
                     Data[i].IDTipoProducto = (int)DB.DR["IDTipoProducto"];
