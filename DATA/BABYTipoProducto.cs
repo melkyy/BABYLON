@@ -20,7 +20,7 @@ namespace DATA
 
         public BABY.enmResultados Agregar(DataBABYTipoProducto Data) {
             Database DB = new Database();
-            
+            DB.COM.Connection = DB.getConnection();
             DB.COM.CommandText = "Exec BABY.spBABYTipoProducto @NombreTipoProducto,@Descripcion,0,1";
             SqlParameter par1 = new SqlParameter("@NombreTipoProducto",Data.NombreTipoProducto);
             par1.SqlDbType =  System.Data.SqlDbType.VarChar;
@@ -35,6 +35,7 @@ namespace DATA
             {
                 if (DB.COM.Connection.State == System.Data.ConnectionState.Closed)
                 {
+                    
                     DB.COM.Connection.Open();
                 }
                 DB.COM.ExecuteNonQuery();
@@ -50,7 +51,7 @@ namespace DATA
 
         public BABY.enmResultados Modifcar(DataBABYTipoProducto Data) {
             Database DB = new Database();
-
+            DB.COM.Connection = DB.getConnection();
             DB.COM.CommandText = "Exec BABY.spBABYTipoProducto @NombreTipoProducto,@Descripcion,@IDTipoProducto,2";
             SqlParameter par1 = new SqlParameter("@NombreTipoProducto", Data.NombreTipoProducto);
             par1.SqlDbType = System.Data.SqlDbType.VarChar;
@@ -85,7 +86,7 @@ namespace DATA
         public BABY.enmResultados Remover(int IDTipoProducto) {
 
             Database DB = new Database();
-
+            DB.COM.Connection = DB.getConnection();
             DB.COM.CommandText = "Exec BABY.spBABYTipoProducto '','',@IDTipoProducto,3";
             
             SqlParameter par1 = new SqlParameter("@IDTipoProducto", IDTipoProducto);
@@ -116,8 +117,8 @@ namespace DATA
         public BABY.enmResultados Mostrar(ref DataBABYTipoProducto Data) {
 
             Database DB = new Database();
-
-            DB.COM.CommandText = "Select * from BABY.BABYTipoProducto where IDTipoProducto = "+Data.IDTipoProducto;
+            DB.COM.Connection = DB.getConnection();
+            DB.COM.CommandText = "Select * from BABY.TipoProducto where IDTipoProducto = "+Data.IDTipoProducto;
 
             try
             {
@@ -149,15 +150,15 @@ namespace DATA
 
         public BABY.enmResultados Listar(ref DataBABYTipoProducto[] Data,String Filtro) {
             Database DB = new Database();
-
-            DB.COM.CommandText = "Select Count(*) from BABY.BABYTipoProducto where NombreTipoProducto like '%" + Filtro + "%'";
+            DB.COM.Connection = DB.getConnection();
+            DB.COM.CommandText = "Select Count(*) from BABY.TipoProducto where NombreTipoProducto like '%" + Filtro + "%'";
             if (DB.COM.Connection.State == System.Data.ConnectionState.Closed)
             {
                 DB.COM.Connection.Open();
             }
             int Cuanto = (int)DB.COM.ExecuteScalar();
 
-            DB.COM.CommandText = "Select * from BABY.BABYTipoProducto where NombreTipoProducto like '%"+Filtro+"%'";
+            DB.COM.CommandText = "Select * from BABY.TipoProducto where NombreTipoProducto like '%"+Filtro+"%'";
             
             
 
