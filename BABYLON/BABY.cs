@@ -11,10 +11,8 @@ namespace BABYLON
         public enum enmResultados
         {
             OperacionCorrecta,
-            FaltanDatos,
             ErrorDeConexion,
             CamposVacios,
-            MetodoNoImplementado,
             IdYaExistente,
             ErrorDeSentencia,
             IdNoExiste,
@@ -22,8 +20,6 @@ namespace BABYLON
             RegistrodeSistema,
             HijosActivos,
             ErrorDeBaseDeDatos,
-            ArchivoNoExistente,
-            ImagenNoExiste,
             DatosDuplicados
         }
     }
