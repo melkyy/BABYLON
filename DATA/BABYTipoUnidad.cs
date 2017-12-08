@@ -9,6 +9,7 @@ namespace DATA
 {
     public class BABYTipoUnidad
     {
+
         Database DB = new Database();
         public struct BABYTipoUnidad
         {
@@ -135,5 +136,6 @@ namespace DATA
                 return BABY.enmResultados.ErrorDeConexion;
             }
         }
+
     }
 }
