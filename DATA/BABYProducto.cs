@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GUI
+namespace DATA
 {
-    public class Class1
+    public class BABYProducto
     {
+
+        Database DB = new Database();
+        
     }
 }

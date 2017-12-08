@@ -39,8 +39,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BABYProducto.cs" />
+    <Compile Include="BABYProvedores.cs" />
+    <Compile Include="BABYTipoProducto.cs" />
+    <Compile Include="BABYTipoUnidad.cs" />
+    <Compile Include="BABYUsuarios.cs" />
+    <Compile Include="Database.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BABYLON\BABYLON.csproj">
+      <Project>{68a4cca0-a554-4a85-958e-6ea720aa8629}</Project>
+      <Name>BABYLON</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

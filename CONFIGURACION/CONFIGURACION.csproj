@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{51B805C2-A651-4FF7-9488-251AE1625786}</ProjectGuid>
+    <ProjectGuid>{A465ECE0-4226-47B3-BA80-C3459BB76A89}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LOGIC</RootNamespace>
-    <AssemblyName>LOGIC</AssemblyName>
+    <RootNamespace>CONFIGURACION</RootNamespace>
+    <AssemblyName>CONFIGURACION</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,15 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BABYUsuarios.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="CONBaseDeDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONBaseDeDatos.Designer.cs">
+      <DependentUpon>CONBaseDeDatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DATA\DATA.csproj">
-      <Project>{25c09a23-76a2-410c-b081-dd31e82aaa25}</Project>
-      <Name>DATA</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="CONBaseDeDatos.resx">
+      <DependentUpon>CONBaseDeDatos.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
