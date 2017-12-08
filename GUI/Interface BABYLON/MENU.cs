@@ -51,5 +51,29 @@ namespace GUI.Interface_BABYLON
             BABYTipoUnidad.frmBABYTipoUnidadCAT f = new BABYTipoUnidad.frmBABYTipoUnidadCAT();
             f.Show();
         }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm is BABYProveedores.frmBABYProveedoresCAT)
+                {
+                    frm.Focus();
+                    return;
+                }
+            }
+            BABYProveedores.frmBABYProveedoresCAT f = new BABYProveedores.frmBABYProveedoresCAT();
+            f.Show();
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.D))
+            {
+                DBConfig.frmDBConfig frm = new DBConfig.frmDBConfig();
+                frm.ShowDialog();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }

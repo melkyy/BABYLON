@@ -41,6 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BABYProveedores\BABYProveedores.cs" />
+    <Compile Include="BABYProveedores\frmBABYProveedoresCAT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BABYProveedores\frmBABYProveedoresCAT.Designer.cs">
+      <DependentUpon>frmBABYProveedoresCAT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BABYProveedores\frmBABYProveedoresINS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BABYProveedores\frmBABYProveedoresINS.Designer.cs">
+      <DependentUpon>frmBABYProveedoresINS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BABYProveedores\frmBABYProveedoresMDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BABYProveedores\frmBABYProveedoresMDF.Designer.cs">
+      <DependentUpon>frmBABYProveedoresMDF.cs</DependentUpon>
+    </Compile>
     <Compile Include="BABYTipoUnidad\BABYTipoUnidad.cs" />
     <Compile Include="BABYTipoUnidad\frmBABYTipoUnidadCAT.cs">
       <SubType>Form</SubType>
@@ -87,6 +106,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BABYProveedores\frmBABYProveedoresCAT.resx">
+      <DependentUpon>frmBABYProveedoresCAT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BABYProveedores\frmBABYProveedoresINS.resx">
+      <DependentUpon>frmBABYProveedoresINS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BABYProveedores\frmBABYProveedoresMDF.resx">
+      <DependentUpon>frmBABYProveedoresMDF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BABYTipoUnidad\frmBABYTipoUnidadCAT.resx">
       <DependentUpon>frmBABYTipoUnidadCAT.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,9 +160,7 @@
       <Name>LOGIC</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BABYProveedores\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -42,11 +42,15 @@ namespace DATA
         }
         public BABY.enmResultados Modificar(DataBABYTipoUnidad str)
         {
-            string cmdText = "UPDATE [BABY].[TipoUnidad] SET NombreTipoUnidad = @NombreTipoUnidad WHERE idTipoUnidad = " + str.idTipoUnidad;
+            string cmdText = "BABY.spBABYTipoUnidadMDF";
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
             SqlParameter par1 = new SqlParameter("@NombreTipoUnidad", str.NombreTipoUnidad);
             par1.SqlDbType = System.Data.SqlDbType.VarChar;
+            SqlParameter par2 = new SqlParameter("@idTipoUnidad", str.idTipoUnidad);
+            par2.SqlDbType = System.Data.SqlDbType.Int;
             cmd.Parameters.Add(par1);
+            cmd.Parameters.Add(par2);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
             try
             {
                 if (cmd.Connection.State == System.Data.ConnectionState.Closed)
@@ -64,8 +68,12 @@ namespace DATA
         }
         public BABY.enmResultados Remover(int idTipoUnidad)
         {
-            string cmdText = "DELETE FROM [BABY].[TipoUnidad] WHERE idTipoUnidad = " + idTipoUnidad;
+            string cmdText = "BABY.spBABYTipoUnidadRMV";
             SqlCommand cmd = new SqlCommand(cmdText, DB.getConnection());
+            SqlParameter par2 = new SqlParameter("@idTipoUnidad", idTipoUnidad);
+            par2.SqlDbType = System.Data.SqlDbType.VarChar;
+            cmd.Parameters.Add(par2);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
             try
             {
                 if (cmd.Connection.State == System.Data.ConnectionState.Closed)
