@@ -92,11 +92,8 @@
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
             this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(238, 30);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
-<<<<<<< HEAD
-            this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
-=======
-            this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click_1);
->>>>>>> Despues de la entrega estos son los archivos de la entrega
+
+            
             // 
             // productosToolStripMenuItem
             // 

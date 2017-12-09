@@ -118,7 +118,6 @@
             // frmBABYProveedoresCAT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-<<<<<<< HEAD
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 292);
             this.Controls.Add(this.btnAgregar);
@@ -139,40 +138,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.ListView lstLista;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.TextBox txtProveedor;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnRemover;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-
-            this.components = new System.ComponentModel.Container();
-=======
->>>>>>> Despues de la entrega estos son los archivos de la entrega
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(525, 292);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.lstLista);
-            this.Controls.Add(this.txtProveedor);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnRemover);
-            this.Controls.Add(this.btnEditar);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "frmBABYProveedoresCAT";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Administrar Proveedores";
-            this.Load += new System.EventHandler(this.frmBABYProveedoresCAT_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
-        }
-
-        #endregion
-
-<<<<<<< HEAD
-=======
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.ListView lstLista;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -185,7 +150,6 @@
             
         }
 
-        
+     
 
->>>>>>> Despues de la entrega estos son los archivos de la entrega
     }

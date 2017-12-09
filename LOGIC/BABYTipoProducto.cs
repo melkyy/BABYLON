@@ -84,7 +84,7 @@ namespace LOGIC
         public void Remover(int id) {
 
             DATA.BABYTipoProducto Tabla = new DATA.BABYTipoProducto();
-            DATA.BABYTipoProducto.DataBABYTipoProducto Datos = new DATA.BABYTipoProducto.DataBABYTipoProducto();
+           
 
             if(Tabla.Remover(id)==BABYLON.BABY.enmResultados.OperacionCorrecta){
 

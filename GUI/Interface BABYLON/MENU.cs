@@ -47,7 +47,16 @@ namespace GUI.Interface_BABYLON
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm is BABYProveedores.frmBABYProveedoresCAT)
+                {
+                    frm.Focus();
+                    return;
+                }
+            }
+            BABYProveedores.frmBABYProveedoresCAT f = new BABYProveedores.frmBABYProveedoresCAT();
+            f.Show();
         }
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,20 +69,7 @@ namespace GUI.Interface_BABYLON
 
         }
 
-<<<<<<< HEAD
-        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (Form frm in Application.OpenForms)
-            {
-                if (frm is BABYProveedores.frmBABYProveedoresCAT)
-                {
-                    frm.Focus();
-                    return;
-                }
-            }
-            BABYProveedores.frmBABYProveedoresCAT f = new BABYProveedores.frmBABYProveedoresCAT();
-            f.Show();
-        }
+        
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == (Keys.Control | Keys.D))
@@ -83,12 +79,8 @@ namespace GUI.Interface_BABYLON
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
-=======
-        private void proveedoresToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            BABYProveedores.frmBABYProveedoresCAT Forma = new BABYProveedores.frmBABYProveedoresCAT();
-            Forma.ShowDialog();
->>>>>>> Despues de la entrega estos son los archivos de la entrega
-        }
+
+       
+    }
     }
 }
