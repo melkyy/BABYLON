@@ -47,7 +47,16 @@ namespace GUI.Interface_BABYLON
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm is BABYProveedores.frmBABYProveedoresCAT)
+                {
+                    frm.Focus();
+                    return;
+                }
+            }
+            BABYProveedores.frmBABYProveedoresCAT f = new BABYProveedores.frmBABYProveedoresCAT();
+            f.Show();
         }
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,5 +68,19 @@ namespace GUI.Interface_BABYLON
         {
 
         }
+
+        
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.D))
+            {
+                DBConfig.frmDBConfig frm = new DBConfig.frmDBConfig();
+                frm.ShowDialog();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+
+       
+    }
     }
 }

@@ -92,6 +92,8 @@
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
             this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(238, 30);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
+
+            
             // 
             // productosToolStripMenuItem
             // 
